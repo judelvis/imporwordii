@@ -1,4 +1,4 @@
-var sUrl = 'http://' + window.location.hostname + '/transfer';
+var sUrl = 'http://' + window.location.hostname + '/imporwordii';
 var urlPrincipal = sUrl + '/principal/';
 var urlAdmin = sUrl + '/admin/';
 var urlUsu = sUrl + '/usuarios/';
