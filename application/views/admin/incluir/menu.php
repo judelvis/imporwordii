@@ -9,7 +9,7 @@ $nv = $this->session->userdata("praga_tipo");
 
             <!-- logo -->
             <div class="logo">
-                <a style="color: white;" href="<?=base_url("index.php/admin/inicio") ?>">IMPORTWORDLL</a>
+                <a style="color: white;" href="<?=base_url("index.php/admin/inicio") ?>">IMPORTWORDII</a>
             </div>
 
             <!-- logo collapse icon -->

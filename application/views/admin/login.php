@@ -50,7 +50,7 @@
 
             <a href="<?= base_url()?>" class="logo">
                <!--<img src="<?= __IMG__ ?>empresa/logo.jpg" alt="images" width="300px">-->
-                <h3 style="color:white;">IMPORTWORDLL</h3>
+                <h3 style="color:white;">IMPORTWORDII</h3>
                 <div class="companyinfo">
                     <h2><span></span></h2>
                     <p></p>
