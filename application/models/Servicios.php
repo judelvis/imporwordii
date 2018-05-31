@@ -21,13 +21,14 @@ class Servicios extends CI_Model
         $rs = $this->db->query("SELECT * FROM transferencia WHERE referencia ='".$refe."' limit 1");
         if($rs->num_rows() > 0){
             $fila = $rs->row();
+            $newDate = date('d-m-Y g:i A', strtotime($fila->creado));
             $msj = "<h3>El numero de referencia ya se encuentra registrado</h3><br>";
             $msj .= "<table class='table table-responsive table-bordered'>
                         <thead>
-                            <tr><th>Referencia</th><th>Monto</th><th>Fecha</th><th>Creado</th></tr>
+                            <tr><th>Referencia</th><th>Nombre</th><th>Monto</th><th>Fecha</th><th>Creado</th></tr>
                         </thead>
                         <tbody>
-                            <tr><td>".$fila->referencia."</td><th>".$fila->monto."</th><th>".$fila->fecha."</th><th>".$fila->creado."</th></tr>    
+                            <tr><td>".$fila->referencia."</td><td>".$fila->nombre."</td><th>".$fila->monto."</th><th>".$fila->fecha."</th><th>".$newDate."</th></tr>    
                         </tbody>
                     </table>";
             $resp = array("cant"=>1, "msj"=>$msj);
@@ -56,9 +57,10 @@ class Servicios extends CI_Model
             $i = 0;
             foreach ($filas as $fila){
                 $i++;
+                $newDate = date('d-m-Y g:i A', strtotime($fila->creado));
                 $btnBorrar = '<button class="btn btn-danger " onclick="borrar('.$fila->id.')" type="button"><i class="fa fa-trash-o"></i></button>';
                 $tran[] = array("contador"=>$i,"refe"=>$fila->referencia,"monto"=>$fila->monto,"nombre"=>$fila->nombre,"fecha"=>$fila->fecha,
-                    "cedula"=>$fila->cedula,"creado"=>$fila->creado,"accion"=>$btnBorrar);
+                    "cedula"=>$fila->cedula,"creado"=>$newDate,"accion"=>$btnBorrar);
             }
             $datos = array("fallo"=>0,"datos"=>$tran);
         }else{
