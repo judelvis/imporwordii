@@ -1,3 +1,4 @@
+//var sUrl = 'https://' + window.location.hostname;
 var sUrl = 'http://' + window.location.hostname + '/imporwordii';
 var urlPrincipal = sUrl + '/principal/';
 var urlAdmin = sUrl + '/admin/';
